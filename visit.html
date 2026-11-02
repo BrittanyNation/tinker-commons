@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership &amp; Visit — Tinker Commons</title>
+<meta name="description" content="Membership plans, hours, and plain-word answers for Tinker Commons, a fictional tool lending library. Members save 20% on every loan fee.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Membership &amp; Visit — Tinker Commons">
+<meta property="og:description" content="Two simple membership plans, honest hours, and FAQs for a fictional tool lending library.">
+<meta property="og:url" content="https://brittanynation.github.io/tinker-commons/visit.html">
+<meta property="og:image" content="https://brittanynation.github.io/tinker-commons/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🔨 Tinker <span>Commons</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="catalog.html">The Shelf</a>
+    <a href="visit.html" class="active">Membership &amp; Visit</a>
+    <a href="catalog.html#reserve-wrap" class="nav-cta">Reserve a Tool</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="section-head">
+    <h2>Membership, plainly priced</h2>
+    <p>You never need a membership to borrow. Members just pay less per loan and get first hold on new tools. No tiers with asterisks, no auto-renew surprises — we ask before we renew.</p>
+  </div>
+  <div class="plans">
+    <div class="plan">
+      <h3>Neighbor (pay as you go)</h3>
+      <p class="serif" style="font-size:1.8rem;margin:.2rem 0">$0</p>
+      <p>Full loan fees, full access. Deposits as listed on each tool. Perfect for the one-weekend project.</p>
+    </div>
+    <div class="plan featured">
+      <h3>Member</h3>
+      <p class="serif" style="font-size:1.8rem;margin:.2rem 0">$35 <span style="font-size:1rem">/ year</span></p>
+      <p>20% off every loan fee (it shows in the reservation summary before you confirm), first hold on new arrivals, and one free extension per loan.</p>
+    </div>
+    <div class="plan">
+      <h3>Workshop Member</h3>
+      <p class="serif" style="font-size:1.8rem;margin:.2rem 0">$70 <span style="font-size:1rem">/ year</span></p>
+      <p>Everything in Member, plus weekend priority pickup, two guest passes a year, and free delivery on the ladder and party pack. Best for serial renovators.</p>
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top:2.5rem">
+    <h2>Hours &amp; finding us</h2>
+    <p>14 Maple Row, in the old firehouse. Street parking out front, bike rack by the side door, bus 12 stops at the corner.</p>
+  </div>
+  <table>
+    <tr><th>Day</th><th>Hours</th><th>Notes</th></tr>
+    <tr><td>Monday – Friday</td><td>9:00 AM – 7:00 PM</td><td>Full shelf service</td></tr>
+    <tr><td>Saturday</td><td>8:00 AM – 5:00 PM</td><td>Busiest day — reserve ahead</td></tr>
+    <tr><td>Sunday</td><td>Closed</td><td>No pickups; returns go in the side drop box</td></tr>
+  </table>
+
+  <div class="section-head" style="margin-top:2.5rem"><h2>Questions, in plain words</h2></div>
+  <div class="faq"><button type="button">How does the deposit work? <span>+</span></button><div class="body"><p>The deposit on each tool card is held when you pick up and returned in full when the tool comes back on time and undamaged. It is never charged online — the reservation only charges the loan fee.</p></div></div>
+  <div class="faq"><button type="button">What if I need the tool longer? <span>+</span></button><div class="body"><p>Call or email before your return date. If nobody has reserved the copy next, the extension is free for members and the normal day fee for everyone else — always cheaper than the $3/day late fee.</p></div></div>
+  <div class="faq"><button type="button">What if a tool breaks while I have it? <span>+</span></button><div class="body"><p>Stop using it and bring it back. Normal wear is our problem, and honest accidents are usually covered by the deposit at most. We would rather hear about it than have the next borrower find out.</p></div></div>
+  <div class="faq"><button type="button">Can I cancel a reservation? <span>+</span></button><div class="body"><p>Yes — on <a href="catalog.html">The Shelf</a> page, find it under My Reservations or look it up by reference, and cancel in one click. The copy goes straight back into the available pool.</p></div></div>
+  <div class="faq"><button type="button">Do you deliver? <span>+</span></button><div class="body"><p>The ladder and the party pack can be delivered within five miles for $8, arranged at pickup time. Everything else is shelf pickup only.</p></div></div>
+
+  <div class="section-head" style="margin-top:2.5rem">
+    <h2>Shelf Notes, monthly</h2>
+    <p>New arrivals, the most-borrowed list, and one small project idea. First Friday of the month, no spam.</p>
+  </div>
+  <form id="newsletter-form" class="lookup" novalidate>
+    <label style="font-weight:700;display:grid;gap:.3rem">Email
+      <input id="nl-email" type="email" placeholder="you@example.com" size="30">
+    </label>
+    <button class="btn btn-small" type="submit">Join Shelf Notes</button>
+  </form>
+  <p id="nl-msg" class="note" role="status"></p>
+</main>
+
+<footer>
+  <p><strong>Tinker Commons</strong> is a fictional tool lending library created as a front-end design portfolio project.</p>
+  <p>Built with HTML, CSS, and JavaScript, plus a Node.js + Express + SQLite back end in the repo (<a href="https://github.com/BrittanyNation/tinker-commons">source on GitHub</a>).</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
