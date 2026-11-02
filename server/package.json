@@ -1,0 +1,1 @@
+{"dependencies":{"express":"^4.19.2"},"description":"Node.js + Express + SQLite back end for Tinker Commons — course-track step 3 (Full-Stack Web Development Bootcamp): databases + REST API design.","main":"server.js","name":"tinker-commons-server","scripts":{"start":"node server.js"},"version":"1.0.0"}
