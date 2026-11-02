@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinker Commons — Tool Lending Library</title>
+<meta name="description" content="Tinker Commons is a fictional tool lending library. Browse drills, ladders, washers and more, reserve online, and pick up at the shelf. Built with a real SQLite-backed REST API in the repo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tinker Commons — Borrow the tool, skip the purchase">
+<meta property="og:description" content="A fully functional tool lending library website with a database-backed REST API (course step 3). Search, reserve, look up, and cancel — every flow works.">
+<meta property="og:url" content="https://brittanynation.github.io/tinker-commons/">
+<meta property="og:image" content="https://brittanynation.github.io/tinker-commons/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🔨 Tinker <span>Commons</span></a>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="catalog.html">The Shelf</a>
+    <a href="visit.html">Membership &amp; Visit</a>
+    <a href="catalog.html#reserve-wrap" class="nav-cta">Reserve a Tool</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Neighborhood Tool Lending Library</p>
+    <h1>Borrow the tool. Skip the purchase.</h1>
+    <p class="lede">Why buy a tile saw you will use for one weekend? Tinker Commons lends drills, ladders, washers, and party gear by the day — reserved online in a minute, picked up at the shelf on Maple Row.</p>
+    <div class="hero-actions">
+      <a class="btn" href="catalog.html">Browse the shelf</a>
+      <a class="btn btn-ghost" href="visit.html">How membership works</a>
+    </div>
+    <ul class="trust-row">
+      <li><strong>12</strong> tools &amp; kits</li>
+      <li><strong>$6/day</strong> most hand tools</li>
+      <li><strong>7 days</strong> per loan</li>
+    </ul>
+  </div>
+  <div class="hero-card">
+    <div class="big" aria-hidden="true">🧰</div>
+    <h3 class="serif">This weekend's most wanted</h3>
+    <p>The wet tile saw and the pressure washers go first every Saturday. Reserve by Friday and they are held with your name on the case.</p>
+    <p class="note">Every reservation gets a reference like TC-AB12CD — use it any time to look up or cancel your loan.</p>
+  </div>
+</section>
+
+<p id="data-mode" class="data-mode" role="status">Checking where the catalogue is coming from…</p>
+
+<main class="wrap">
+  <h2>How borrowing works</h2>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Reserve online</h3><p>Pick a tool and your dates. You see the full price up front: loan fee, member saving if you have one, and the refundable deposit due at pickup.</p></div>
+    <div class="step"><b>2</b><h3>Pick up at the shelf</h3><p>Bring your reference and a photo ID. The case is checked out to you with everything listed on the tool card inside it.</p></div>
+    <div class="step"><b>3</b><h3>Return, or extend</h3><p>Bring it back by your return date and the deposit comes straight back. Need longer? Call before it is due and most extensions are free.</p></div>
+  </div>
+
+  <div class="section-head" style="margin-top:2.5rem">
+    <h2>Most borrowed this season</h2>
+    <p>The four hardest-working tools in the library. <a href="catalog.html">See the whole shelf →</a></p>
+  </div>
+  <div id="featured-grid" class="grid"></div>
+
+  <div class="section-head" style="margin-top:2.5rem"><h2>The library in numbers</h2></div>
+  <div id="stats-band" class="stats"></div>
+</main>
+
+<div id="detail-modal" class="modal-back" role="dialog" aria-modal="true"><div class="modal" id="detail-body"></div></div>
+
+<footer>
+  <p><strong>Tinker Commons</strong> is a fictional tool lending library created as a front-end design portfolio project. No real tools were lent in the making of this site.</p>
+  <p>Built with HTML, CSS, and JavaScript, plus a Node.js + Express + SQLite back end in the repo (<a href="https://github.com/BrittanyNation/tinker-commons">source on GitHub</a>).</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
