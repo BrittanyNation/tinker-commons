@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Shelf — Tinker Commons Tool Library</title>
+<meta name="description" content="Browse, search, filter, and reserve tools at Tinker Commons, a fictional tool lending library. Full prices up front, reservations with real references.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Shelf — Tinker Commons">
+<meta property="og:description" content="Search, filter, and reserve drills, ladders, washers, and more. A fully functional catalogue backed by a REST API + SQLite database in the repo.">
+<meta property="og:url" content="https://brittanynation.github.io/tinker-commons/catalog.html">
+<meta property="og:image" content="https://brittanynation.github.io/tinker-commons/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">🔨 Tinker <span>Commons</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="catalog.html" class="active">The Shelf</a>
+    <a href="visit.html">Membership &amp; Visit</a>
+    <a href="#reserve-wrap" class="nav-cta">Reserve a Tool</a>
+  </nav>
+</header>
+
+<p id="data-mode" class="data-mode" role="status">Checking where the catalogue is coming from…</p>
+
+<main class="wrap">
+  <div class="section-head">
+    <h2>The shelf</h2>
+    <p>Every price is the whole price: the day fee, and the refundable deposit you hand over at pickup and get back on return. Availability counts real reservations — when copies are out, the card says so.</p>
+  </div>
+
+  <div class="controls">
+    <div class="chips" role="group" aria-label="Filter by category">
+      <button class="chip active" data-filter="all">All tools</button>
+      <button class="chip" data-filter="power">Power Tools</button>
+      <button class="chip" data-filter="garden">Garden</button>
+      <button class="chip" data-filter="cleaning">Cleaning</button>
+      <button class="chip" data-filter="renovation">Renovation</button>
+      <button class="chip" data-filter="events">Events</button>
+      <button class="chip" data-filter="craft">Craft</button>
+    </div>
+    <label class="search-box">Search
+      <input id="search" type="search" placeholder="Try “ladder” or “tile”…">
+    </label>
+    <label class="sort-box">Sort
+      <select id="sort">
+        <option value="popular">Most borrowed</option>
+        <option value="fee-low">Fee: low to high</option>
+        <option value="fee-high">Fee: high to low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </label>
+    <label class="check-box">Availability
+      <span><input id="only-available" type="checkbox"> Available only</span>
+    </label>
+  </div>
+  <p id="result-count" class="note" role="status"></p>
+  <div id="tool-grid" class="grid"></div>
+
+  <section id="reserve-wrap" style="margin-top:3rem">
+    <div class="section-head">
+      <h2>Reserve: <span id="res-tool-name">pick a tool above</span></h2>
+      <p>Loans run 1 to 7 days, pickup any day except Sunday. Members save 20% on the loan fee — tick the box and watch the summary change.</p>
+    </div>
+    <div id="res-errors" class="errors" role="alert"></div>
+    <form id="reserve-form" class="form-grid" novalidate>
+      <div class="two">
+        <label>Pickup date <input id="f-pickup" type="date" required></label>
+        <label>Return date <input id="f-return" type="date" required></label>
+      </div>
+      <div class="two">
+        <label>Your name <input id="f-name" type="text" autocomplete="name" placeholder="e.g. Jordan Lee" required></label>
+        <label>Email <input id="f-email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      </div>
+      <label>Phone (for pickup-day updates) <input id="f-phone" type="tel" autocomplete="tel" placeholder="(555) 010-2233" required></label>
+      <label style="display:flex;gap:.5rem;align-items:center;font-weight:700"><input id="f-member" type="checkbox" style="width:auto"> I am a Tinker Commons member (20% off the loan fee)</label>
+      <div id="res-summary" class="summary"><p><span>Pick dates to see the full price — no surprises, ever.</span></p></div>
+      <button class="btn" type="submit">Confirm reservation</button>
+    </form>
+    <div id="res-success" class="success" role="status"></div>
+  </section>
+
+  <section style="margin-top:3rem">
+    <div class="section-head">
+      <h2>My reservations</h2>
+      <p>Reservations made on this device are listed here. In live mode (server running), you can also find any reservation with the lookup.</p>
+    </div>
+    <div id="my-reservations"></div>
+    <form id="lookup-form" class="lookup" style="margin-top:1.2rem">
+      <label style="font-weight:700;display:grid;gap:.3rem">Look up by reference or email
+        <input id="lookup-input" type="text" placeholder="TC-AB12CD or you@example.com" size="34">
+      </label>
+      <button class="btn btn-small" type="submit">Look up</button>
+    </form>
+    <div id="lookup-results" style="margin-top:.8rem"></div>
+  </section>
+</main>
+
+<div id="detail-modal" class="modal-back" role="dialog" aria-modal="true"><div class="modal" id="detail-body"></div></div>
+
+<footer>
+  <p><strong>Tinker Commons</strong> is a fictional tool lending library created as a front-end design portfolio project.</p>
+  <p>Built with HTML, CSS, and JavaScript, plus a Node.js + Express + SQLite back end in the repo (<a href="https://github.com/BrittanyNation/tinker-commons">source on GitHub</a>).</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
